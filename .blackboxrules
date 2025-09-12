@@ -1,0 +1,1 @@
+Nah supaya gak bingung flow pengembangannya jangan fokus ke bussines logic dulu atau UI/UX dulu, tidak, tapi kembangkan bertahap pastikan step by stepnya work baik bussines logic + UI bersamaan, tidak perlu pakai motode testing-testing debuggin, cukup pastikan anda tidak menulis kode error. kita akan langsung test secara live, dengan koneksi live ke database

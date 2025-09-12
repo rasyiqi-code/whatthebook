@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "327096289049",
+    "firebase_url": "https://whatbook-c7210-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "whatbook-c7210",
+    "storage_bucket": "whatbook-c7210.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:327096289049:android:7ed4a0e3307d96565f2788",
+        "android_client_info": {
+          "package_name": "com.crediblemark.whatthebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "327096289049-1tfgqkdlbd2tuue6bg6sjl0f5oc0qai7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxpeMO86a9L48sm6k5un4n6YkAJ7zcmrk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "327096289049-1tfgqkdlbd2tuue6bg6sjl0f5oc0qai7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

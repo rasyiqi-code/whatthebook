@@ -1,0 +1,36 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "whatbook-c7210",
+          "appId": "1:327096289049:android:7ed4a0e3307d96565f2788",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "whatbook-c7210",
+          "configurations": {
+            "android": "1:327096289049:android:7ed4a0e3307d96565f2788",
+            "web": "1:327096289049:web:01c6c67bd95276be5f2788"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
