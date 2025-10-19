@@ -87,6 +87,16 @@ import '../../features/books/domain/repositories/unified_bookmark_repository.dar
 import '../../features/books/domain/usecases/get_all_unified_bookmarks.dart';
 import '../../features/books/presentation/bloc/unified_bookmark_bloc.dart';
 
+// Achievements Feature
+import '../../features/achievements/presentation/bloc/user_stats_bloc.dart';
+import '../../features/achievements/presentation/bloc/leaderboard_bloc.dart';
+import '../../features/achievements/domain/usecases/get_user_stats.dart';
+import '../../features/achievements/domain/usecases/get_author_leaderboard.dart';
+import '../../features/achievements/data/repositories/user_stats_repository.dart';
+import '../../features/achievements/data/repositories/author_leaderboard_repository.dart';
+import '../../features/achievements/data/repositories/user_stats_repository_impl.dart';
+import '../../features/achievements/data/repositories/author_leaderboard_repository_impl.dart';
+
 final sl = GetIt.instance;
 
 Future<void> init() async {
@@ -323,6 +333,35 @@ Future<void> init() async {
   // Data sources
   sl.registerLazySingleton<UnifiedBookmarkRemoteDataSource>(
     () => UnifiedBookmarkRemoteDataSourceImpl(client: sl()),
+  );
+
+  //! Features - Achievements
+  // Bloc
+  sl.registerFactory(
+    () => UserStatsBloc(
+      getUserStats: sl(),
+      getUserProductivityTimeSeries: sl(),
+      getCommunityProductivityTimeSeries: sl(),
+    ),
+  );
+  sl.registerFactory(
+    () => LeaderboardBloc(
+      getAuthorLeaderboard: sl(),
+    ),
+  );
+
+  // Use cases
+  sl.registerLazySingleton(() => GetUserStats(sl()));
+  sl.registerLazySingleton(() => GetUserProductivityTimeSeries(sl()));
+  sl.registerLazySingleton(() => GetCommunityProductivityTimeSeries(sl()));
+  sl.registerLazySingleton(() => GetAuthorLeaderboard(sl()));
+
+  // Repository
+  sl.registerLazySingleton<UserStatsRepository>(
+    () => UserStatsRepositoryImpl(),
+  );
+  sl.registerLazySingleton<AuthorLeaderboardRepository>(
+    () => AuthorLeaderboardRepositoryImpl(),
   );
 
   //! External

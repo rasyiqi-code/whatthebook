@@ -271,7 +271,7 @@ class _BookDetailsPageState extends State<BookDetailsPage> {
                   ),
                   const SizedBox(height: 8),
                   DropdownButtonFormField<String>(
-                    value: _selectedGenre,
+                    initialValue: _selectedGenre,
                     decoration: const InputDecoration(
                       border: OutlineInputBorder(),
                       hintText: 'Pilih genre',

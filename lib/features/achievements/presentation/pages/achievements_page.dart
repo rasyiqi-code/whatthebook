@@ -4,12 +4,10 @@ import 'package:supabase_flutter/supabase_flutter.dart';
 import '../bloc/user_stats_bloc.dart';
 import '../bloc/leaderboard_bloc.dart';
 import '../../domain/usecases/get_author_leaderboard.dart';
-import '../../domain/usecases/get_user_stats.dart';
-import '../../data/repositories/author_leaderboard_repository_impl.dart';
-import '../../data/repositories/user_stats_repository_impl.dart';
 import '../widgets/leaderboard_list.dart';
 import 'package:fl_chart/fl_chart.dart';
 import '../../domain/entities/user_stats.dart';
+import '../../../../core/injection/injection_container.dart' as di;
 
 class AchievementsPage extends StatelessWidget {
   const AchievementsPage({super.key});
@@ -23,21 +21,10 @@ class AchievementsPage extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider<UserStatsBloc>(
-          create: (_) => UserStatsBloc(
-            getUserStats: GetUserStats(UserStatsRepositoryImpl()),
-            getUserProductivityTimeSeries: GetUserProductivityTimeSeries(
-              UserStatsRepositoryImpl(),
-            ),
-            getCommunityProductivityTimeSeries:
-                GetCommunityProductivityTimeSeries(UserStatsRepositoryImpl()),
-          )..add(LoadUserStatsEvent(user.id)),
+          create: (_) => di.sl<UserStatsBloc>()..add(LoadUserStatsEvent(user.id)),
         ),
         BlocProvider<LeaderboardBloc>(
-          create: (_) => LeaderboardBloc(
-            getAuthorLeaderboard: GetAuthorLeaderboard(
-              AuthorLeaderboardRepositoryImpl(),
-            ),
-          )..add(LoadLeaderboardEvent(LeaderboardTimeFilter.weekly)),
+          create: (_) => di.sl<LeaderboardBloc>()..add(LoadLeaderboardEvent(LeaderboardTimeFilter.weekly)),
         ),
       ],
       child: _AchievementsView(

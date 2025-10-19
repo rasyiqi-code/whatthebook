@@ -444,7 +444,7 @@ class _PdfUploadPageState extends State<PdfUploadPage> {
                         children: [
                           Expanded(
                             child: DropdownButtonFormField<String>(
-                              value: _selectedCategory,
+                              initialValue: _selectedCategory,
                               decoration: const InputDecoration(
                                 labelText: 'Category',
                                 border: OutlineInputBorder(),
@@ -465,7 +465,7 @@ class _PdfUploadPageState extends State<PdfUploadPage> {
                           const SizedBox(width: 16),
                           Expanded(
                             child: DropdownButtonFormField<String>(
-                              value: _selectedLanguage,
+                              initialValue: _selectedLanguage,
                               decoration: const InputDecoration(
                                 labelText: 'Language',
                                 border: OutlineInputBorder(),

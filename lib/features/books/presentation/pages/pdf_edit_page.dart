@@ -377,7 +377,7 @@ class _PdfEditPageState extends State<PdfEditPage> {
                       children: [
                         Expanded(
                           child: DropdownButtonFormField<String>(
-                            value: _selectedCategory,
+                            initialValue: _selectedCategory,
                             decoration: const InputDecoration(
                               labelText: 'Category',
                               border: OutlineInputBorder(),
@@ -399,7 +399,7 @@ class _PdfEditPageState extends State<PdfEditPage> {
                         const SizedBox(width: 16),
                         Expanded(
                           child: DropdownButtonFormField<String>(
-                            value: _selectedLanguage,
+                            initialValue: _selectedLanguage,
                             decoration: const InputDecoration(
                               labelText: 'Language',
                               border: OutlineInputBorder(),

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/entities/reading_list.dart';
 import '../bloc/social_bloc.dart';
 import '../bloc/social_event.dart';
 import 'edit_reading_list_page.dart';
 import '../../../books/presentation/pages/book_detail_page.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ReadingListDetailsPage extends StatefulWidget {
   final ReadingList readingList;
